@@ -13,15 +13,18 @@ p {
   margin: 0 0 1em;
 }
 .container {
-  width: 1920px;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
   margin: 0 auto;
 }
 .picture, .resume {
+  width:50%;
   position: fixed;
-  width: 960px;
   padding: 3.125rem;
 }
 .picture {
+
   top: 0;
   left: 0;
 }
@@ -65,6 +68,8 @@ p {
   overflow-y: scroll;
 }
 .part {
+  display:flex;
+  flex-wrap: wrap;
   width: 100%;
   margin-top: 3em;
   clear: both;
@@ -78,14 +83,52 @@ p {
 }
 .sidebar {
   width: 10%;
+  margin-right:10%;
 }
 .main {
-  width: 90%;
-  padding-right: 25%;
+  width: 70%;
 }
 .tag {
   text-transform: uppercase;
   font-style: italic;
   font-weight: 600;
   color: rgb(43, 93, 240);
+}
+
+@media screen and (max-width: 950px) {
+  .sidebar {
+    width:100%;
+    margin-right: 0;
+  }
+  .main {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 667px) {
+   .resume {
+    position: relative;
+    width: 100% !important;
+  }
+
+  .picture {
+    display: none;
+  }
+
+  .intro {
+    margin:10%;
+  }
+  .sidebar {
+    width:100%;
+    margin-right: 0;
+  }
+  .main {
+    width: 100%;
+  }
+  .background {
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom; 
+    background-repeat: no-repeat;
+  }
 }
